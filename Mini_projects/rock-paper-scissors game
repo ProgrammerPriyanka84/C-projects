@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int user, computer;
+    
+    cout << "=== Rock Paper Scissors Game ===\n";
+    cout << "1. Rock\n2. Paper\n3. Scissors\n";
+    cout << "Enter your choice: ";
+    cin >> user;
+
+    computer = rand() % 3 + 1;
+
+    cout << "\nComputer chose: ";
+    if (computer == 1) cout << "Rock";
+    else if (computer == 2) cout << "Paper";
+    else cout << "Scissors";
+
+    cout << "\n";
+
+    if (user == computer) {
+        cout << "It's a draw!\n";
+    }
+    else if ((user == 1 && computer == 3) ||
+             (user == 2 && computer == 1) ||
+             (user == 3 && computer == 2)) {
+        cout << "You win!\n";
+    }
+    else if (user >= 1 && user <= 3) {
+        cout << "Computer wins!\n";
+    }
+    else {
+        cout << "Invalid choice!\n";
+    }
+
+    return 0;
+}
